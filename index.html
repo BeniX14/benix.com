@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BeniXHáza:D</title>
+  <style>
+    /* CSS styling */
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 20px;
+      cursor: pointer
+    }
+
+    button:hover {
+      background-color: #3e8e41;
+    }
+
+    #discord-widget {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+    }
+
+    #discord-widget iframe {
+      width: 300px;
+      height: 500px;
+      border: none;
+    }
+
+    footer {
+      background-color: #f2f2f2;
+      color: #444;
+      text-align: center;
+      padding: 10px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+      <style>
+        #text {
+          color: Blue;
+          font-size: 50px;
+          /* A szöveg mérete */
+        }
+      </style>
+    </head>
+
+    <body>
+      <p id="text"></p>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          var textElement = document.getElementById("text");
+          var text = "Üdvözöllek az oldalon.  :D"; // A megjelenítendő szöveg
+          var delay = 5000; // 5 másodperc késleltetés
+          var index = 0;
+          var timer;
+
+          function typeText() {
+            textElement.innerHTML += text.charAt(index); // Hozzáadja a következő karaktert a szöveghez
+            index++;
+
+            if (index < text.length) {
+              timer = setTimeout(typeText, 100); // Vár 100ms-t és hívja meg újra a függvényt a következő karakterhez
+            } else {
+              setTimeout(eraseText, delay); // Vár egy késleltetést, majd elkezdi törölni a szöveget
+            }
+          }
+
+          function eraseText() {
+            timer = setInterval(function () {
+              var currentText = textElement.innerHTML;
+              if (currentText.length === 0) {
+                clearInterval(timer);
+                index = 0;
+                setTimeout(typeText, delay); // Vár egy késleltetést, majd újrakezdi a szöveg megjelenítését
+              } else {
+                textElement.innerHTML = currentText.slice(0, -1); // Törli az utolsó karaktert
+              }
+            }, 100);
+          }
+
+          typeText(); // Elindítja a szöveg megjelenítését
+        });
+      </script>
+    </body>
+
+    </html>
+  </header>
+  <div id="discord-widget">
+    <iframe src="https://discord.com/widget?id=1029452920611151986&theme=dark" allowtransparency="true"
+      frameborder="0"></iframe>
+  </div>
+  <button onclick="window.location.href='';">
+    BPowerV2</button>
+  <footer>
+    <p>© 2023 BeniXCraft. Minden jog fenntartva.</p>
+  </footer>
+</body>
+
+
+<button onclick="redirectToOtherPage()">Minecraft server</button>
+
+<script>
+  function redirectToOtherPage() {
+    window.location.href = "https://benix.kukikuki2.repl.co/mc.html"; // Cseréld ki a linket a célszerver URL-jére
+  }
+</script>
+
+</html>
