@@ -6,7 +6,7 @@
     <style>
         body {
             background-color: black;
-            color: white;
+            color: green;
             font-family: Arial, sans-serif;
         }
         
@@ -20,7 +20,7 @@
         
         input[type="submit"] {
             background-color: blue;
-            color: white;
+            color: green;
             padding: 8px 16px;
             border: none;
             cursor: pointer;
@@ -31,7 +31,7 @@
         }
         
         p {
-            color: blue;
+            color: green;
         }
         
         span {
@@ -40,7 +40,41 @@
         }
     </style>
     <script>
-        // JavaScript kód itt
+        function submitVote() {
+            var selectedOption = document.querySelector('input[name="szavazas"]:checked').value;
+            var voted = localStorage.getItem("voted");
+
+            if (!voted) {
+                if (selectedOption === "igen") {
+                    localStorage.setItem("voted", "true");
+                    localStorage.setItem("igenCount", 1);
+                    localStorage.setItem("nemCount", 0);
+                } else if (selectedOption === "nem") {
+                    localStorage.setItem("voted", "true");
+                    localStorage.setItem("igenCount", 0);
+                    localStorage.setItem("nemCount", 1);
+                }
+            }
+
+            updateVoteCounts();
+            enableVoting();
+        }
+
+        function updateVoteCounts() {
+            var igenCount = parseInt(localStorage.getItem("igenCount")) || 0;
+            var nemCount = parseInt(localStorage.getItem("nemCount")) || 0;
+            document.getElementById("igenCount").innerText = igenCount;
+            document.getElementById("nemCount").innerText = nemCount;
+        }
+
+        function enableVoting() {
+            var radioButtons = document.querySelectorAll('input[type="radio"]');
+            for (var i = 0; i < radioButtons.length; i++) {
+                radioButtons[i].checked = false;
+            }
+        }
+
+        window.onload = updateVoteCounts;
     </script>
 </head>
 
