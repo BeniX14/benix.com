@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Szavazás Minecraft serverről</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        
+        h2 {
+            color: green;
+        }
+        
+        form {
+            margin-bottom: 20px;
+        }
+        
+        input[type="submit"] {
+            background-color: blue;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        input[type="radio"] {
+            margin-right: 8px;
+        }
+        
+        p {
+            color: blue;
+        }
+        
+        span {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        // JavaScript kód itt
+    </script>
+</head>
+
+<body>
+    <h2>Legyen Minecraft server később?</h2>
+    <form onsubmit="event.preventDefault(); submitVote();">
+        <p>
+            <input type="radio" id="igen" name="szavazas" value="igen">
+            <label for="igen">Igen</label>
+        </p>
+        <p>
+            <input type="radio" id="nem" name="szavazas" value="nem">
+            <label for="nem">Nem</label>
+        </p>
+        <input type="submit" value="Szavazok">
+    </form>
+    <h3>Szavazatok:</h3>
+    <p>Igenre szavazott: <span id="igenCount">0</span></p>
+    <p>Nemre szavazott: <span id="nemCount">0</span></p>
+</body>
+
+</html>
