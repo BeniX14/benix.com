@@ -91,49 +91,7 @@
                     /* A szöveg mérete */
                 }
             </style>
-        </head>
-
-        <body>
-            <p id="text"></p>
-
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    var textElement = document.getElementById("text");
-                    var text = "Üdvözöllek az oldalon.  :D"; // A megjelenítendő szöveg
-                    var delay = 5000; // 5 másodperc késleltetés
-                    var index = 0;
-                    var timer;
-
-                    function typeText() {
-                        textElement.innerHTML += text.charAt(index); // Hozzáadja a következő karaktert a szöveghez
-                        index++;
-
-                        if (index < text.length) {
-                            timer = setTimeout(typeText, 100); // Vár 100ms-t és hívja meg újra a függvényt a következő karakterhez
-                        } else {
-                            setTimeout(eraseText, delay); // Vár egy késleltetést, majd elkezdi törölni a szöveget
-                        }
-                    }
-
-                    function eraseText() {
-                        timer = setInterval(function() {
-                            var currentText = textElement.innerHTML;
-                            if (currentText.length === 0) {
-                                clearInterval(timer);
-                                index = 0;
-                                setTimeout(typeText, delay); // Vár egy késleltetést, majd újrakezdi a szöveg megjelenítését
-                            } else {
-                                textElement.innerHTML = currentText.slice(0, -1); // Törli az utolsó karaktert
-                            }
-                        }, 100);
-                    }
-
-                    typeText(); // Elindítja a szöveg megjelenítését
-                });
-            </script>
-        </body>
-
-    </header>
+       
     <div id="discord-widget">
         <iframe src="https://discord.com/widget?id=1029452920611151986&theme=dark" allowtransparency="true" frameborder="0"></iframe>
     </div>
