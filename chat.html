@@ -59,7 +59,7 @@
 
     <script>
         const username = prompt("Kérlek, add meg a felhasználóneved:");
-        const ws = new WebSocket('ws:https://benix14.github.io/benix.com/chat.html');
+        const ws = new WebSocket('ws://localhost:8080');
 
         ws.onopen = () => {
             const loginData = {
