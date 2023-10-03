@@ -14,3 +14,18 @@
     <video id="video" playingline style="display: none; pointer-events: none;"></video>
   </body>
 </html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Oldal bezárása</title>
+    <script>
+        window.onbeforeunload = function() {
+            return "Biztosan be szeretnéd zárni az oldalt? Az esetleges nem mentett változások elveszhetnek.";
+        };
+    </script>
+</head>
+<body>
+    <!-- Oldal tartalma itt -->
+</body>
+</html>
